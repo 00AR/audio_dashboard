@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Dashboard</title>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Upload">
+    </form>
+
+    <table>
+        <tr>
+            <th>Play</th>
+            <th>Title</th>
+            <th>Uploaded</th>
+            <th>Duration</th>
+            <th>Size</th>
+            <th>extension</th>
+        </tr>
+
+        {% for audio in audio_list %}
+            <tr>
+                <td><a href="{{audio.file.url}}">Play</a></td>
+                <td>{{ audio.title }}</td>
+                <td>{{ audio.date_of_upload }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
