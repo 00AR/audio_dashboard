@@ -19,13 +19,13 @@ class Audio(models.Model):
     size = models.IntegerField(null=False)
     extension = models.CharField(max_length=10, null=False)
     duration = models.DurationField()
-    is_song = models.BooleanField()
+    is_song = models.BooleanField() # shall we give a default value to be 0
     
     # if audio file is a Song, display more metadata
     artist = models.CharField(blank=True, max_length=200)
     album = models.CharField(blank=True, max_length=200)
     genre = models.CharField(blank=True, max_length=200)
-    release_date = models.DateField()
+    release_date = models.DateField(null=True)
 
-    def __str__(self):
-        return self.title
+    # def __str__(self):
+    #     return self.title
