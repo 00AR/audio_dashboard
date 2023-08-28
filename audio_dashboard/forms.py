@@ -1,8 +1,9 @@
 from django import forms
-from . import models
+from .validator import validate_is_audio_file
+
 
 class LoginForm(forms.Form):
-    username = forms.CharField(label="Enter Username", max_length=50)
+    username = forms.CharField(max_length=50)
 
 
 class MultipleFileInput(forms.ClearableFileInput):
@@ -10,6 +11,7 @@ class MultipleFileInput(forms.ClearableFileInput):
 
 
 class MultipleFileField(forms.FileField):
+
     def __init__(self, *args, **kwargs):
         kwargs.setdefault("widget", MultipleFileInput())
         super().__init__(*args, **kwargs)
@@ -24,4 +26,4 @@ class MultipleFileField(forms.FileField):
 
 
 class MultiUploadAudioForm(forms.Form):
-    files = MultipleFileField()
+    files = MultipleFileField(validators=(validate_is_audio_file,))

@@ -27,5 +27,5 @@ class Audio(models.Model):
     genre = models.CharField(blank=True, max_length=200)
     release_date = models.DateField(null=True)
 
-    # def __str__(self):
-    #     return self.title
+    def __str__(self):
+        return self.title
