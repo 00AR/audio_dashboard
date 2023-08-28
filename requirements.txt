@@ -1,0 +1,11 @@
+asgiref==3.7.2
+cassidy==0.1.4
+Django==4.2.4
+enumb==0.1.5
+expo==0.1.2
+mimetype==0.1.5
+mutagen==1.46.0
+psycopg2-binary==2.9.7
+python-magic==0.4.27
+sqlparse==0.4.4
+typing_extensions==4.7.1
