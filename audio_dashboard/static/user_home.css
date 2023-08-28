@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1abc9c;
+    overflow: hidden;
+}
+
+.header {
+    line-height: 80px;
+    background: #16a085;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;   
+}
+
+.container {
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+}
+
+.wrapper {
+    max-width: 440px;
+    border-radius: 5px;
+    padding: 8px 4px 14px 8px;
+    position: relative;
+}
+
+.wrapper form .row {
+    height: 45px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.wrapper form .button input {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 0px;
+    background: #16a085;
+    border: 1px solid #16a085;
+    cursor: pointer;
+    margin-top: 8px;
+
+}
+
+.wrapper form .row input {
+    height: 40px;
+    width: 80px;
+    outline: none;
+    /* padding-left: 10px; */
+    border-radius: 5px;
+    /* border: 1px solid lightgrey; */
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+form .row input:focus {
+    border-color: #16a085;
+    box-shadow: inset 0px 0px 2px 2px rgba(26, 188, 156, 0.25);
+}
+
+
+form .button input:hover {
+    background: #12876f;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+
+thead {
+    position: sticky;
+    top:0;
+    background-color: #12876f;
+    color: #e2dada;
+    padding: 20px;
+}
+
+th,td {
+    border: 1px solid #0d5f4f;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
+}
+
+th {
+    padding: 8px;
+}
+
+
+tbody tr:nth-child(odd) {
+    background-color: #3dc0a6;
+}
+  
+tbody tr:nth-child(even) {
+background-color: #42d6b8;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+
+.scroll {
+    display: block;
+    max-height: 450px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.errorlist {
+    color: red;
+}

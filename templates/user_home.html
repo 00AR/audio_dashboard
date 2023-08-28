@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Dashboard</title>
+    <link rel="stylesheet" href="{% static 'user_home.css' %}">
+</head>
+<body>
+    <div class="header">Audio Dashboard</div>
+    <div class="container">
+        <div class="wrapper">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form }}
+                <span class="row button">
+                    <input type="submit" value="Upload">
+                </span>
+            </form>
+        </div>
+        <div class="scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Play</th>
+                        <th>Title</th>
+                        <th>Uploaded</th>
+                        <th>Duration</th>
+                        <th>Size (kB)</th>
+                        <th>extension</th>
+                        <th>Is Song</th>
+                        <th>Artist</th>
+                        <th>Album</th>
+                        <th>Genre</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    {% for audio in audio_list %}
+                    <tr>
+                        <td><a href="{{audio.file.url}}"><img src="{% static 'icon1.png' %}" alt="play"></a></td>
+                        <td>{{ audio.title }}</td>
+                        <td>{{ audio.date_of_upload }}</td>
+                        <td>{{ audio.duration }}</td>
+                        <td>{{ audio.size }}</td>
+                        <td>{{ audio.extension }}</td>
+                        <td>{{ audio.is_song }}</td>
+                        <td>{{ audio.artist }}</td>
+                        <td>{{ audio.album }}</td>
+                        <td>{{ audio.genre }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+    
+            </table>
+        </div>
+    </div>
+</body>
+</html>
