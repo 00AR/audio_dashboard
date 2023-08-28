@@ -25,6 +25,7 @@ def validate_is_audio_file(file):
 
 
 def validate_duration_longer(duration):
+    """Check if the duration of the audio is within 10 minutes limit"""
     if duration > timedelta(seconds=600):
         return False
     return True

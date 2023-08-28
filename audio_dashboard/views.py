@@ -8,6 +8,7 @@ from .validator import validate_duration_longer
 
 
 def demo_login_required(view):
+    """Checking if the user is logged in"""
     def inner(request):
         user_id = request.session.get("user")
         try:
@@ -19,6 +20,7 @@ def demo_login_required(view):
 
 
 def demo_login(request, user):
+    """Injecting username in the request object"""
     request.session["user"] = user.id
 
 
@@ -78,9 +80,7 @@ def user_home(request):
 
 def extract_metadata(file):
     """
-        Extract all the required metadata from audio file. Also 
-        makes the checks such as if the filetype is audio and 
-        if the duration is not longer than 10 minutes
+        Extract all the required metadata from audio file.
     """
     tags = mutagen.File(file)
     metadata = {}
