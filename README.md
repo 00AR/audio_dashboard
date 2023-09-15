@@ -18,7 +18,11 @@ DATABASE_PASSWORD
 DATABASE_HOST
 DATABASE_PORT
 ```
-
+## Screenshots
+- User Login Page:
+![Login](screenshots/login.png)
+- Audio Dashboard Page:
+![AudioDashboard](screenshots/user_dashboard.png)
 ## Working
 There are two pages in the app: Login page and Audio dashboard.
 
